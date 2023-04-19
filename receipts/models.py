@@ -11,7 +11,7 @@ class ExpenseCategory(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Account(models.Model):
@@ -38,7 +38,6 @@ class Receipt(models.Model):
         ExpenseCategory,
         related_name="receipts",
         on_delete=models.CASCADE,
-        null=True,
     )
     account = models.ForeignKey(
         Account,
