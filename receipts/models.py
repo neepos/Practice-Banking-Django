@@ -35,12 +35,13 @@ class Receipt(models.Model):
         on_delete=models.CASCADE,
     )
     category = models.ForeignKey(
-        ExpenseCategory,
+        "ExpenseCategory",
         related_name="receipts",
         on_delete=models.CASCADE,
+        null=True,
     )
     account = models.ForeignKey(
-        Account,
+        "Account",
         related_name="receipts",
         on_delete=models.CASCADE,
         null=True,
